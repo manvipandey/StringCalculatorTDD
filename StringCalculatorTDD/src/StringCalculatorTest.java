@@ -39,4 +39,9 @@ public class StringCalculatorTest {
         Assert.assertEquals(10, stringCalc.Add("1\n2\n3\n4"));
     }
 
+    @Test
+    public void unknownAmountOfNumbersAnyDelimitedReturnSum() {
+        Assert.assertEquals(3, stringCalc.Add("//;\n1;2"));
+    }
+
 }

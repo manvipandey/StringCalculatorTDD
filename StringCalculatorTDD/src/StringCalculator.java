@@ -2,7 +2,7 @@ import org.junit.Test;
 
 public class StringCalculator {
 
-    private String delimiter = ",|\n";
+    private String delimiter = "\\D+";
 
     private int stringToInt(String input) {
         return Integer.parseInt(input);
@@ -17,8 +17,14 @@ public class StringCalculator {
             return stringToInt(input);
         }
         else {
-            int sum = 0;
-            for(int i=0; i<numbers.length; i++) {
+            int sum = 0, i;
+            if(numbers[0].isEmpty()) {
+                i = 1;
+            }
+            else {
+                i = 0;
+            }
+            for(; i<numbers.length; i++) {
                 sum += stringToInt(numbers[i]);
             }
             return sum;
