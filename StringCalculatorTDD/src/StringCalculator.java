@@ -25,7 +25,11 @@ public class StringCalculator {
                 i = 0;
             }
             for(; i<numbers.length; i++) {
-                sum += stringToInt(numbers[i]);
+                int number = stringToInt(numbers[i]);
+                if(number > 1000) {
+                    continue;
+                }
+                sum += number;
             }
             return sum;
         }

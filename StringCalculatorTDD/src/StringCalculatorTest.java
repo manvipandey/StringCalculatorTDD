@@ -44,4 +44,10 @@ public class StringCalculatorTest {
         Assert.assertEquals(3, stringCalc.Add("//;\n1;2"));
     }
 
+    @Test
+    public void avoidAddingNumberGreaterThan1000() {
+        Assert.assertEquals(3, stringCalc.Add("3,1001"));
+    }
+
+
 }
