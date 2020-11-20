@@ -5,7 +5,7 @@ public class StringCalculator {
     private int stringToInt(String input) {
         return Integer.parseInt(input);
     }
-    public int calculate(String input) {
+    public int Add(String input) {
         String[] numbers = input.split(",");
 
         if(input.isEmpty()) {

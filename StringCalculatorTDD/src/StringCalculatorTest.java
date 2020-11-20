@@ -9,21 +9,21 @@ public class StringCalculatorTest {
     public void emptyStringReturnsZero() {
 
         // Returns 0 when an empty string is passed
-        Assert.assertEquals(0, stringCalc.calculate(""));
+        Assert.assertEquals(0, stringCalc.Add(""));
     }
 
     @Test
     public void singleValueIsReturned() {
         // Returns the number itself when only one value is passed
-        Assert.assertEquals(1, stringCalc.calculate("1"));
-        Assert.assertEquals(2, stringCalc.calculate("2"));
+        Assert.assertEquals(1, stringCalc.Add("1"));
+        Assert.assertEquals(2, stringCalc.Add("2"));
     }
 
     @Test
     public void twoNumbersCommaDelimitedReturnsSum() {
         // Returns the sum of the two numbers delimited by a comma
-        Assert.assertEquals(3, stringCalc.calculate("1,2"));
-        Assert.assertEquals(5, stringCalc.calculate("2,3"));
+        Assert.assertEquals(3, stringCalc.Add("1,2"));
+        Assert.assertEquals(5, stringCalc.Add("2,3"));
 
     }
 
