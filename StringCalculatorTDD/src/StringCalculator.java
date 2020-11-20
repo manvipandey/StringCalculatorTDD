@@ -2,11 +2,13 @@ import org.junit.Test;
 
 public class StringCalculator {
 
+    private String delimiter = ",|\n";
+
     private int stringToInt(String input) {
         return Integer.parseInt(input);
     }
     public int Add(String input) {
-        String[] numbers = input.split(",");
+        String[] numbers = input.split(delimiter);
 
         if(input.isEmpty()) {
             return 0;

@@ -28,11 +28,15 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void unknownAmountOfNumbersReturnSum() {
+    public void unknownAmountOfNumbersCommaDelimitedReturnSum() {
         Assert.assertEquals(10, stringCalc.Add("1,2,3,4"));
         Assert.assertEquals(55, stringCalc.Add("1,2,3,4,5,6,7,8,9,10"));
     }
 
-
+    @Test
+    public void unknownAmountOfNumbersNewLineDelimitedReturnSum() {
+        Assert.assertEquals(6, stringCalc.Add("1\n2,3"));
+        Assert.assertEquals(10, stringCalc.Add("1\n2\n3\n4"));
+    }
 
 }
