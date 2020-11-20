@@ -27,6 +27,12 @@ public class StringCalculatorTest {
 
     }
 
+    @Test
+    public void unknownAmountOfNumbersReturnSum() {
+        Assert.assertEquals(10, stringCalc.Add("1,2,3,4"));
+        Assert.assertEquals(55, stringCalc.Add("1,2,3,4,5,6,7,8,9,10"));
+    }
+
 
 
 }

@@ -15,7 +15,11 @@ public class StringCalculator {
             return stringToInt(input);
         }
         else {
-            return stringToInt(numbers[0]) + stringToInt(numbers[1]);
+            int sum = 0;
+            for(int i=0; i<numbers.length; i++) {
+                sum += stringToInt(numbers[i]);
+            }
+            return sum;
         }
     }
 }
