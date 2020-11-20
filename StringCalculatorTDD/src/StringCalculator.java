@@ -1,13 +1,16 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class StringCalculator {
 
-    private String delimiter = "\\D+";
+    private String delimiter = "[^-?0-9]+";
+    private ArrayList<Integer> negativeValues = new ArrayList<>();
 
     private int stringToInt(String input) {
         return Integer.parseInt(input);
     }
-    public int Add(String input) {
+    public int Add(String input) throws NegativeValueException {
         String[] numbers = input.split(delimiter);
 
         if(input.isEmpty()) {
@@ -26,12 +29,21 @@ public class StringCalculator {
             }
             for(; i<numbers.length; i++) {
                 int number = stringToInt(numbers[i]);
-                if(number > 1000) {
-                    continue;
+                if(number < 0) {
+                    negativeValues.add(number);
                 }
-                sum += number;
+                else if(number <= 1000) {
+                    sum += number;
+                }
             }
-            return sum;
+            if(negativeValues.size() > 0) {
+                throw new NegativeValueException("Negatives not allowed", negativeValues);
+            }
+            else {
+                return sum;
+            }
+
+
         }
     }
 }
