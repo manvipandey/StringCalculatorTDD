@@ -12,10 +12,19 @@ public class StringCalculatorTest {
         Assert.assertEquals(0, stringCalc.calculate(""));
     }
 
+    @Test
     public void singleValueIsReturned() {
         // Returns the number itself when only one value is passed
         Assert.assertEquals(1, stringCalc.calculate("1"));
         Assert.assertEquals(2, stringCalc.calculate("2"));
+    }
+
+    @Test
+    public void twoNumbersCommaDelimitedReturnsSum() {
+        // Returns the sum of the two numbers delimited by a comma
+        Assert.assertEquals(3, stringCalc.calculate("1,2"));
+        Assert.assertEquals(5, stringCalc.calculate("2,3"));
+
     }
 
 
