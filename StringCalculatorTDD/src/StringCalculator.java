@@ -2,7 +2,13 @@ import org.junit.Test;
 
 public class StringCalculator {
 
-    public int calculate(String string) {
-        return 0;
+    private int stringToInt(String input) {
+        return Integer.parseInt(input);
+    }
+    public int calculate(String input) {
+        if(input.isEmpty()) {
+            return 0;
+        }
+        return stringToInt(input);
     }
 }
